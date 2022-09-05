@@ -3,14 +3,13 @@ import { Container, Profile, Logout } from "./styles"
 import {useAuth} from "../../hooks/auth"
 
 export function Header() {
-  const {signOut} = useAuth()
+  const {signOut, user} = useAuth()
   return (
     <Container>
       <Profile to="/profile">
-        <img src="https://www.github.com/VitorNasc4.png" alt="Foto de Perfil" />
         <div>
           <span>Bem vindo</span>
-          <strong>Vitor Marciano</strong>
+          <strong>{user.name}</strong>
         </div>
       </Profile>
       <Logout onClick={signOut}>

@@ -13,8 +13,8 @@ function AuthProvider({children}) {
             const response = await api.post("/sessions", {email, password})
             const { user, token } = response.data
             
-            localStorage.setItem("@rocketnotes: user", JSON.stringify(user))
-            localStorage.setItem("@rocketnotes: token", token)
+            localStorage.setItem("@bemolchannel: user", JSON.stringify(user))
+            localStorage.setItem("@bemolchannel: token", token)
 
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
@@ -30,8 +30,8 @@ function AuthProvider({children}) {
     }
 
     function signOut(){
-        localStorage.removeItem("@rocketnotes: token")
-        localStorage.removeItem("@rocketnotes: user")
+        localStorage.removeItem("@bemolchannel: token")
+        localStorage.removeItem("@bemolchannel: user")
 
         setData({})
     }
@@ -40,7 +40,7 @@ function AuthProvider({children}) {
         try {
             await api.put("/user", user)
             
-            localStorage.setItem("@rocketnotes: user", JSON.stringify(user))
+            localStorage.setItem("@bemolchannel: user", JSON.stringify(user))
 
            setData({user, token: data.token})
 
@@ -56,8 +56,8 @@ function AuthProvider({children}) {
     }
 
     useEffect(() => {
-        const token = localStorage.getItem("@rocketnotes: token")
-        const user = localStorage.getItem("@rocketnotes: user")
+        const token = localStorage.getItem("@bemolchannel: token")
+        const user = localStorage.getItem("@bemolchannel: user")
 
         if (token && user) {
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`

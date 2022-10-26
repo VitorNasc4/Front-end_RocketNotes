@@ -18,6 +18,9 @@ export function Profile() {
     const [passwordOld, setPasswordOld] = useState("")
     const [passwordNew, setPasswordNew] = useState("")
 
+    const [avatar, setAvatar] = useState(user.avatar)
+    const [avatarFile, setAvatarFile] = useState(null)
+
     async function handleUpdate() {
         const user = {
             name, 
@@ -29,6 +32,13 @@ export function Profile() {
         await updateProfile({user})
     }
 
+    function handleChangeAvatar(event) {
+        const file = event.target.files[0]
+        setAvatarFile(file)
+
+        const imagePreview = URL.createObjectURL(file)
+        setAvatar(imagePreview)
+    }
 
     return (
         <Container>
@@ -41,7 +51,7 @@ export function Profile() {
             <Form>
                 <Avatar>
                     <img 
-                        src="https://github.com/VitorNasc4.png" 
+                        src={avatar} 
                         alt="Foto de usuário" 
                     />
 
@@ -51,6 +61,7 @@ export function Profile() {
                         <input
                             id="avatar"
                             type="file"
+                            onChange={handleChangeAvatar}
                         />
                     </label>
                 </Avatar>

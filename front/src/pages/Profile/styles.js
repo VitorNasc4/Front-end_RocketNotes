@@ -25,10 +25,11 @@ export const Form = styled.form`
     max-width: 340px;
     margin: 30px auto 0;
 
-    > div:nth-child(4) {
+    > div:nth-child(5) {
         margin-top: 24px;
     }
 
+<<<<<<< HEAD:front/src/pages/Profile/styles.js
 `
 
 export const Avatar = styled.div`
@@ -71,4 +72,6 @@ export const Avatar = styled.div`
             color: ${({theme}) => theme.COLORS.BACKGROUND_800};
         }
     }
+=======
+>>>>>>> 6e0eedf0224c3ef24cc2d9e1594f10b8233628c1:src/pages/Profile/styles.js
 `

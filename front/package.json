@@ -9,12 +9,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD:front/package.json
     "axios": "^1.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.4.2",
     "styled-components": "^5.3.6"
+=======
+    "axios": "^0.27.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.5"
+>>>>>>> 6e0eedf0224c3ef24cc2d9e1594f10b8233628c1:package.json
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
